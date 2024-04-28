@@ -1,0 +1,48 @@
+INSERT INTO department (id, name) 
+VALUES  (1, "Programming"),
+        (2, "Art"),
+        (3, "Narrative"),
+        (4, "Audio");
+
+INSERT INTO role (id, title, salary, department_id) 
+VALUES  (1, "Lead Programmer", 10, 1),
+        (2, "Gameplay Programmer", 10, 1),
+        (3, "Combat Programmer", 10, 1),
+        (4, "Associate Programmer", 10, 1),
+        (5, "Art Director", 10, 2),
+        (6, "Environmental Artist", 10, 2),
+        (7, "Character Artist", 10, 2),
+        (8, "UI Design", 10, 2),
+        (9, "Narrative Director", 10, 3),
+        (10, "Writer", 10, 3),
+        (11, "Motion Capture Technician", 10, 3),
+        (12, "Audio Director", 10, 4),
+        (13, "Technical Sound Designer", 10, 4),
+        (14, "Sound Designer", 10, 4),
+        (15, "Dialogue Designer", 10, 4),
+        (16, "Music Designer", 10, 4),
+        (17, "Music Editor", 10, 4);
+
+INSERT INTO employee (id, first_name, last_name, role_id, manager_id) 
+VALUES  (1, "Cerso", "Yeet", 1, null),
+        (2, "Scott", "Vermeersch", 2, 1),
+        (3, "Adam", "Roller", 2, 1),
+        (4, "Jared", "Kohler", 3, 1),
+        (5, "James", "Probel", 4, 2),
+        (6, "Rob", "Borbas", 5, null),
+        (7, "Lion", "Thornforg", 6, 6),
+        (8, "Omar", "Dogan", 7, 6),
+        (9, "Ilya", "Kuvshinov", 7, 6),
+        (10, "Baker", "Fu", 8, 6),
+        (11, "Iggy", "Cossman", 9, null),
+        (12, "Logan", "Fouss", 10, 11),
+        (13, "Jared", "Wilder", 10, 11),
+        (14, "Taylor", "Rohrig", 11, null),
+        (15, "Andrew", "Buresh", 12, null),
+        (16, "Bradley", "Gurwin", 13, 15),
+        (17, "Alex", "Previty", 14, 15),
+        (18, "Peter", "Trepke", 14, 15),
+        (19, "Kevin", "McClelland", 15, 15),
+        (20, "Bill", "Hemstapat", 16, null),
+        (21, "Sonia", "Coronado", 16, null),
+        (22, "Kelvin", "Yuen", 17, 20);
