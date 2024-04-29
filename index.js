@@ -1,5 +1,5 @@
 const inquirer = require("inquirer");
-const dbQuery = require("./lib/queries/queries.js")
+const dbQuery = require("./lib/queries/queries.js");
 
 const start = () => {
     inquirer
@@ -8,38 +8,42 @@ const start = () => {
                 type: 'list',
                 message: 'Which action would you like to do?',
                 choices: ['view all departments', 'view all roles', 'view all employees', 'add a department', 'add a role', 'add an employee', 'update an employee role'],
-                name: 'start',
+                name: 'option',
             }
         ])
         .then((response) => {
-            switch (response) {
-                case "view all departments":
+            const { option } = response;
+            switch (option) {
+                case 'view all departments':
+                    console.log("List of Departments:");
                     dbQuery.viewDepartments();
                     break;
                 case "view all roles":
+                    console.log("List of Roles:");
                     dbQuery.viewRoles();
                     break;
                 case "view all employees":
+                    console.log("List of Employees:");
                     dbQuery.viewEmployees();
                     break;
-                case "add a department":
-                    // query to add department
-                    console.log(1);
+                case "add a department":                    
+                    dbQuery.addDepartment();
                     break;
                 case "add a role":
-                    console.log(1);
+                    dbQuery.addRole();
                     break;
                 case "add an employee":
-                    console.log(1);
+                    dbQuery.addEmployee();
                     break;
                 case "update an employee role":
-                    console.log(1);
+                    dbQuery.updateEmployee();
                     break;
-            }
+            };
+            // start();
         })
 };
 
-// start();
+start();
 
 // const test = () => {
 //     dbQuery.viewRoles();
