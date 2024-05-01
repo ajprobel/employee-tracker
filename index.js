@@ -1,11 +1,13 @@
 const inquirer = require("inquirer");
 const dbQuery = require("./lib/queries/queries.js");
+const cTable = require('console.table');
 
 const start = () => {
     inquirer
         .prompt([
             {
                 type: 'list',
+                loop: true,
                 message: 'Which action would you like to do?',
                 choices: ['view all departments', 'view all roles', 'view all employees', 'add a department', 'add a role', 'add an employee', 'update an employee role'],
                 name: 'option',
@@ -40,6 +42,7 @@ const start = () => {
                     break;
             };
             // start();
+            return;
         })
 };
 
