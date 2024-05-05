@@ -2,6 +2,7 @@ const inquirer = require("inquirer");
 const dbQuery = require("./lib/queries/queries.js");
 const cTable = require('console.table');
 
+// Defining start function - will run on 'npm start' or 'node index.js'
 const start = () => {
     inquirer
         .prompt([
@@ -15,6 +16,7 @@ const start = () => {
         ])
         .then((response) => {
             const { option } = response;
+            // based on what the user has chosen from Inquirer, call the related method of the imported object
             switch (option) {
                 case 'view all departments':
                     console.log("List of Departments:");
@@ -41,15 +43,8 @@ const start = () => {
                     dbQuery.updateEmployee();
                     break;
             };
-            // start();
-            return;
+            
         })
 };
 
 start();
-
-// const test = () => {
-//     dbQuery.viewRoles();
-// }
-
-// test();
